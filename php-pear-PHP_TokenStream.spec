@@ -3,7 +3,7 @@
 Summary:	Wrapper around PHP's tokenizer extension
 Name:		php-pear-%{upstream_name}
 Version:	1.1.1
-Release:	%mkrel 3
+Release:	%mkrel 4
 License:	BSD
 Group:		Development/PHP
 URL:		http://www.phpunit.de/
