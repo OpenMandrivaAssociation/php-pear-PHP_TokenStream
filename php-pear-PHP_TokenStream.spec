@@ -3,7 +3,7 @@
 Summary:	Wrapper around PHP's tokenizer extension
 Name:		php-pear-%{upstream_name}
 Version:	1.1.1
-Release:	%mkrel 4
+Release:	%mkrel 1
 License:	BSD
 Group:		Development/PHP
 URL:		http://www.phpunit.de/
@@ -18,7 +18,6 @@ BuildRequires:	php-pear
 BuildRequires:	php-channel-phpunit
 Suggests:	php-pear-PHPUnit >= 3.6.3
 Suggests:	php-tokenizer
-BuildRequires:	php-cli
 BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-buildroot
 
 %description
@@ -60,7 +59,7 @@ pear install --nodeps --soft --force --register-only \
 %if %mdkversion < 201000
 if [ "$1" -eq "0" ]; then
     pear uninstall --nodeps --ignore-errors --register-only \
-        %{upstream_name} >/dev/null || :
+        %{pear_name} >/dev/null || :
 fi
 %endif
 
@@ -73,3 +72,13 @@ fi
 %{_datadir}/pear/PHP/*.php
 %{_datadir}/pear/packages/PHP_TokenStream.xml
 
+
+
+%changelog
+* Wed Nov 16 2011 Oden Eriksson <oeriksson@mandriva.com> 1.1.1-1mdv2012.0
++ Revision: 730885
+- import php-pear-PHP_TokenStream
+
+
+* Wed Nov 16 2011 Oden Eriksson <oeriksson@mandriva.com> 1.1.1-1mdv2010.2
+- initial Mandriva package
